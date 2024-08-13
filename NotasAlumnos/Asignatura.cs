@@ -5,14 +5,15 @@ namespace NotasAlumnos
    
     public class Asignatura: Alumno,IAsignatura
     {
-            
+        public double Nota1;
 
-        public double Nota1 {  get; set; }
+        public double Nota2;
 
-        public double Nota2 {  get; set; }
-        
-        public double Nota3 {  get; set; }
-        public double notaFinal { get; set; }
+        public double Nota3;
+
+        public double notaFinal;
+        public double notaFinal2;
+
         public string Mensaje {  get; set; }
         public string Clase {  get; set; }
         public string HClase {  get; set; }
@@ -22,6 +23,12 @@ namespace NotasAlumnos
             notaFinal=Nota1 + Nota2+Nota3;
             return notaFinal;
         }
+        public double CalcularNotaFinal()
+        { 
+            notaFinal2=Nota1 + Nota2+ Nota3;
+            return notaFinal2;
+        }
+
 
         public string MensajeNotaFinal(double notaFinal)
         {
@@ -50,7 +57,8 @@ namespace NotasAlumnos
             Console.WriteLine($"Nombre de la Clase: {Clase}");
             Console.WriteLine($"Horario: {HClase}");
             Console.WriteLine($"Nombre del Docente: {NDocente}");
-            Console.WriteLine($"Nota Final: {notaFinal}, - {MensajeNotaFinal}");
+            Console.WriteLine($"Nota Final: {notaFinal2}, - {MensajeNotaFinal(notaFinal)}");
+            Console.WriteLine($"Nota Final: {notaFinal}, - {MensajeNotaFinal(notaFinal)}");
 
         }
     }
